@@ -1,0 +1,4 @@
+/* 结算中心页面布局间距 */
+.app-section + .app-section {
+  margin-top: 16px;
+}
