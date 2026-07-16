@@ -1,6 +1,5 @@
 // 层级定义(从细到粗)
 export const LEVELS = [
-  { value: 'platform', label: '平台' },
   { value: 'user', label: '用户' },
   { value: 'project', label: '项目' },
   { value: 'group', label: '项目组' },
@@ -10,7 +9,6 @@ export const LEVELS = [
 
 // 每个层级对应的 id / name 字段名
 export const LEVEL_FIELDS = {
-  platform: { idKey: 'partnerId', nameKey: 'partnerName' },
   user: { idKey: 'userId', nameKey: 'userName' },
   project: { idKey: 'projectId', nameKey: 'projectName' },
   group: { idKey: 'groupId', nameKey: 'groupName' },

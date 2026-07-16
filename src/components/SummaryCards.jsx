@@ -1,14 +1,13 @@
 import { Row, Col, Card, Statistic, Popover, Tag, Button } from 'antd'
-import { formatNumber, formatChange } from '../utils/format.js'
+import { formatNumber } from '../utils/format.js'
 import { MODEL_COLORS } from '../constants/index.js'
 
 export default function SummaryCards({ summary, modelBreakdown }) {
-  const change = formatChange(summary.changePercent)
   const hasBreakdown = modelBreakdown && Object.keys(modelBreakdown).length > 0
 
   return (
     <Row gutter={16}>
-      <Col xs={24} sm={12} lg={6}>
+      <Col xs={24} sm={12} lg={8}>
         <Card style={{ borderLeft: '4px solid #1677ff' }}>
           <Statistic title="总消耗积分" value={formatNumber(summary.totalPoints)} />
           {hasBreakdown && (
@@ -40,7 +39,7 @@ export default function SummaryCards({ summary, modelBreakdown }) {
           )}
         </Card>
       </Col>
-      <Col xs={24} sm={12} lg={6}>
+      <Col xs={24} sm={12} lg={8}>
         <Card style={{ borderLeft: '4px solid #52c41a' }}>
           <Statistic title="消耗次数" value={summary.totalCount} />
           {hasBreakdown && (
@@ -72,18 +71,9 @@ export default function SummaryCards({ summary, modelBreakdown }) {
           )}
         </Card>
       </Col>
-      <Col xs={24} sm={12} lg={6}>
+      <Col xs={24} sm={12} lg={8}>
         <Card style={{ borderLeft: '4px solid #faad14' }}>
           <Statistic title="日均消耗" value={formatNumber(Math.round(summary.dailyAvg))} />
-        </Card>
-      </Col>
-      <Col xs={24} sm={12} lg={6}>
-        <Card style={{ borderLeft: '4px solid #722ed1' }}>
-          <Statistic
-            title="环比变化"
-            value={change.text}
-            valueStyle={{ color: change.color }}
-          />
         </Card>
       </Col>
     </Row>
